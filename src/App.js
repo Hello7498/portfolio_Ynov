@@ -1,5 +1,6 @@
 import React from 'react';
 import { Text, Box, Grommet } from 'grommet';
+import { Profil } from './features/Profil/Profil';
 import { NewCompExample } from './features/NewCompExample/NewCompExample';
 
 const theme = {
@@ -15,11 +16,9 @@ const theme = {
 function App() {
   return(
     <Grommet theme={theme} full>
-        <Box direction="row">
-          <Text>Hello Word</Text>
-          <Text>Hello Word 2</Text>
+        <Box pad="small"> 
+          <Profil></Profil>
         </Box>
-        <NewCompExample/>
     </Grommet>
   )
 }
