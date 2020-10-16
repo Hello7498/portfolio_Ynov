@@ -21,7 +21,7 @@ const theme = {
 
 function App() {
   return (
-    <Grommet theme={theme} full>
+    <Grommet theme={theme} full background="neutral-3">
       <Box
         pad="small"
         margin="small"
@@ -36,10 +36,18 @@ function App() {
         pad="small"
         margin="small"
         background="light-3"
-        animation={{type:"zoomIn",duration:750}}
+        animation={{ type: "slideUp", duration: 750 }}
 
       >
         <Experience />
+      </Box>
+      <Box
+        pad="small"
+        margin="small"
+        background="light-2"
+        round="small"
+        animation={{ type: "slideDown", duration: 750 }}
+      >
       </Box>
     </Grommet>
   )

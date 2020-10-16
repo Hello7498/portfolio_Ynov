@@ -16,13 +16,11 @@ export const Profil = () => {
         >
             <Box
                 justify="center"
-                // align="center"
                 gridArea="contact"
                 pad="small"
             >
                 <Text
                     weight="bold"
-                    // textAlign="center"
                     margin="small"
                 >
                 {"Contact :"}
