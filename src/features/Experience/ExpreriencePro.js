@@ -1,9 +1,15 @@
 import React from 'react';
 import { Text, Box, Image, Accordion, AccordionPanel } from 'grommet';
 import { CaretNext, LinkNext } from 'grommet-icons';
+import {useSelector} from 'react-redux'
+import { selectLanguage} from '../Languages/languageSlice';
+import { languageJSON } from '../Languages/Languages'
 
 
 export const ExperiencePro = () => {
+
+    const language = useSelector(selectLanguage)
+
     return (
         <Box>
             <Box
@@ -35,13 +41,13 @@ export const ExperiencePro = () => {
                             pad="large"
                         >
                             <Text>
-                                {"Web developer intern"}
+                                {languageJSON[language].experiencesPro.exp1.Status}
                             </Text>
                             <Text>
                                 {"ARAPL Grand Sud"}
                             </Text>
                             <Text>
-                                {"4, April 2018"} <LinkNext size="small" /> {"8, July 2018"}
+                                {languageJSON[language].experiencesPro.exp1.Begin_date} <LinkNext size="small" /> {languageJSON[language].experiencesPro.exp1.End_date}
                             </Text>
                         </Box>
                     </Box>
@@ -54,9 +60,9 @@ export const ExperiencePro = () => {
                                 width="large"
                             >
                                 <ul>
-                                    <li>Development of a mobile application for tax simulation</li>
-                                    <li>Development of an adaptive satisfaction survey</li>
-                                    <li>Development of a tool allowing to visualize the results of the survey</li>
+                                    <li>{languageJSON[language].experiencesPro.exp1.Mission1}</li>
+                                    <li>{languageJSON[language].experiencesPro.exp1.Mission2}</li>
+                                    <li>{languageJSON[language].experiencesPro.exp1.Mission3}</li>
                                 </ul>
                             </Box>
                         </AccordionPanel>
@@ -84,13 +90,13 @@ export const ExperiencePro = () => {
                             pad="large"
                         >
                             <Text>
-                                {"Apprenticeship Consultant"}
+                            {languageJSON[language].experiencesPro.exp2.Status}
                             </Text>
                             <Text>
                                 {"Capgemini"}
                             </Text>
                             <Text>
-                                {"1, October 2019"} <LinkNext size="small" /> {"1, October 2021"}
+                                {languageJSON[language].experiencesPro.exp2.Begin_date} <LinkNext size="small" /> {languageJSON[language].experiencesPro.exp2.End_date}
                             </Text>
                         </Box>
                     </Box>
@@ -103,7 +109,7 @@ export const ExperiencePro = () => {
                                  width="large"
                             >
                                 <ul>
-                                    <li>development of a suite of applications (SoTesty) to facilitate the work of automation testers.</li>
+                                    <li>{languageJSON[language].experiencesPro.exp2.Mission1}</li>
                                 </ul>
 
                             </Box>

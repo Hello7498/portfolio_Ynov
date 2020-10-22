@@ -1,9 +1,9 @@
 import React from 'react';
-import { Box, Text } from 'grommet';
+import { Box } from 'grommet';
 import { CaretUp } from 'grommet-icons';
 import { OneSchool } from './OneSchool';
 import {useSelector} from 'react-redux'
-import {fr, en, selectLanguage} from '../../Languages/languageSlice';
+import {selectLanguage} from '../../Languages/languageSlice';
 import { languageJSON } from '../../Languages/Languages'
 
 
@@ -18,12 +18,10 @@ export const Schools = () => {
             align="center"
             gap="medium"
         >
-             <Text> {language}</Text>
-            <Text> {languageJSON.fr.bonjour}</Text>
             <OneSchool
                 logoPath="ynov-logo.jpg"
-                nameSchool="Toulouse Ynov Campus"
-                nameFormation="Master: Expert in Software Development, Mobile and IoT"
+                nameSchool={languageJSON[language].Schools.School1.Campus}
+                nameFormation={languageJSON[language].Schools.School1.Formation}
                 dateBegin="2019"
                 DateEnd="2021"
             />
@@ -32,8 +30,8 @@ export const Schools = () => {
             />
             <OneSchool
                 logoPath="iut-logo.png"
-                nameSchool="University Institute of Technology Paul Sabatier Toulouse"
-                nameFormation="Professional license : Software development and quality"
+                nameSchool={languageJSON[language].Schools.School2.Campus}
+                nameFormation={languageJSON[language].Schools.School2.Formation}
                 dateBegin="2018"
                 DateEnd="2019"
             />
@@ -42,8 +40,8 @@ export const Schools = () => {
             />
             <OneSchool
                 logoPath="iut-logo.png"
-                nameSchool="University Institute of Technology Paul Sabatier Toulouse"
-                nameFormation=" DUT diploma : Computer Science"
+                nameSchool={languageJSON[language].Schools.School3.Campus}
+                nameFormation={languageJSON[language].Schools.School3.Formation}
                 dateBegin="2016"
                 DateEnd="2018"
             />

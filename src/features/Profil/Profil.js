@@ -1,6 +1,7 @@
 import React from 'react';
 import { Text, Box, Avatar, Grid, Button } from 'grommet';
 import { Facebook, Instagram, Linkedin, Github } from 'grommet-icons';
+import { SelectLanguage } from '../Languages/SelectLanguage'
 
 export const Profil = () => {
     return (
@@ -23,17 +24,17 @@ export const Profil = () => {
                     weight="bold"
                     margin="small"
                 >
-                {"Contact :"}
+                    {"Contact :"}
                 </Text>
                 <Text
                     margin="small"
                 >
-                {"Hugo.boehm98@gmail.com"}
+                    {"Hugo.boehm98@gmail.com"}
                 </Text>
                 <Text
                     margin="small"
                 >
-                {"44 rue Merly APT 5 31000 Toulouse"}
+                    {"44 rue Merly APT 5 31000 Toulouse"}
                 </Text>
             </Box>
             <Box
@@ -46,8 +47,8 @@ export const Profil = () => {
                     size="myLarge"
 
                 />
-                <Box 
-                    direction="row" 
+                <Box
+                    direction="row"
                     gap="xsmall">
                     <Text
                         textAlign="center"
@@ -71,10 +72,11 @@ export const Profil = () => {
                 direction="row"
                 gap="xsmall"
             >
-                <Button icon={<Facebook size='large'/>} href= "https://www.facebook.com/hugo.leblond.9"></Button>
-                <Button icon={<Linkedin size='large'/>} href= "https://www.linkedin.com/in/hugo-boehm-89b563173/" ></Button>
-                <Button icon={<Instagram size='large'/>} href= "https://www.instagram.com/hugo.boehm/" ></Button>
-                <Button icon={<Github size='large'/>} href= "https://github.com/Hello7498" ></Button>
+                <SelectLanguage/>
+                <Button icon={<Facebook size='large' />} href="https://www.facebook.com/hugo.leblond.9"></Button>
+                <Button icon={<Linkedin size='large' />} href="https://www.linkedin.com/in/hugo-boehm-89b563173/" ></Button>
+                <Button icon={<Instagram size='large' />} href="https://www.instagram.com/hugo.boehm/" ></Button>
+                <Button icon={<Github size='large' />} href="https://github.com/Hello7498" ></Button>
 
             </Box>
         </Grid>

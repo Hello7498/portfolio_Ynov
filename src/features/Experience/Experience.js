@@ -1,34 +1,39 @@
 import React from 'react';
 import { Skills } from './Skills/Skills'
 import { ExperiencePro } from './ExpreriencePro'
-import { Text, Box, Grid, Collapsible, Button } from 'grommet';
+import { Schools } from './Schools/Schools'
+import { Box, Grid, Collapsible, Button } from 'grommet';
 import { CaretDownFill, CaretUpFill } from 'grommet-icons';
+import {useSelector} from 'react-redux'
+import { selectLanguage} from '../Languages/languageSlice';
+import { languageJSON } from '../Languages/Languages'
 
 export const Experience = () => {
+    const language = useSelector(selectLanguage)
     const [skillsIsOpen, setSkillsIsOpen] = React.useState(true);
     const [workIsOpen, setWorkIsOpen] = React.useState(false);
-    const [scoolIsOpen, setScoolIsOpen] = React.useState(false);
+    const [schoolIsOpen, setschoolIsOpen] = React.useState(false);
     function openItem(item) {
         switch (item) {
             case "skills":
-                setScoolIsOpen(false)
+                setschoolIsOpen(false)
                 setWorkIsOpen(false)
                 setSkillsIsOpen(!skillsIsOpen)
                 break;
 
             case "work":
-                setScoolIsOpen(false)
+                setschoolIsOpen(false)
                 setWorkIsOpen(!workIsOpen)
                 setSkillsIsOpen(false)
                 break;
-            case "scool":
-                setScoolIsOpen(!scoolIsOpen)
+            case "school":
+                setschoolIsOpen(!schoolIsOpen)
                 setWorkIsOpen(false)
                 setSkillsIsOpen(false)
                 break;
 
             default:
-                setScoolIsOpen(false)
+                setschoolIsOpen(false)
                 setWorkIsOpen(false)
                 setSkillsIsOpen(false)
                 break;
@@ -40,17 +45,17 @@ export const Experience = () => {
                 rows={['50px']}
                 columns={['1/3', '1/3', '1/3']}
                 areas={[
-                    { name: 'scool', start: [0, 0], end: [0, 0] },
+                    { name: 'school', start: [0, 0], end: [0, 0] },
                     { name: 'work', start: [1, 0], end: [1, 0] },
                     { name: 'skills', start: [2, 0], end: [2, 0] },
                 ]}
             >
                 <Box
-                    gridArea="scool"
+                    gridArea="school"
                     justify="center"
                     align="center"
                 >
-                    <Button color="light-3" onClick={() => openItem("skills")} label="Skills" icon={skillsIsOpen ? (<CaretUpFill />) : (<CaretDownFill />)} reverse />
+                    <Button color="light-3" onClick={() => openItem("skills")} label={languageJSON[language].experience.Skills} icon={skillsIsOpen ? (<CaretUpFill />) : (<CaretDownFill />)} reverse />
 
                 </Box>
 
@@ -59,7 +64,7 @@ export const Experience = () => {
                     justify="center"
                     align="center"
                 >
-                    <Button color="light-3" onClick={() => openItem("work")} label="Experience" icon={workIsOpen ? (<CaretUpFill />) : (<CaretDownFill />)} reverse />
+                    <Button color="light-3" onClick={() => openItem("work")} label={languageJSON[language].experience.Experiences} icon={workIsOpen ? (<CaretUpFill />) : (<CaretDownFill />)} reverse />
                 </Box>
 
                 <Box
@@ -67,37 +72,38 @@ export const Experience = () => {
                     justify="center"
                     align="center"
                 >
-                    <Button color="light-3" onClick={() => openItem("scool")} label="Scool" icon={scoolIsOpen ? (<CaretUpFill />) : (<CaretDownFill />)} reverse />
+                    <Button color="light-3" onClick={() => openItem("school")} label={languageJSON[language].experience.Schools} icon={schoolIsOpen ? (<CaretUpFill />) : (<CaretDownFill />)} reverse />
 
                 </Box>
             </Grid>
-            <Collapsible open={scoolIsOpen}>
+            <Collapsible open={schoolIsOpen}>
                 <Box
-                    background="light-1"
+                    background="white"
                     round="small"
                     pad="medium"
                     align="center"
                     justify="center"
                 >
-                    <Text>This is a box inside a Collapsible component</Text>
+                    <Schools />
+
                 </Box>
             </Collapsible>
             <Collapsible open={workIsOpen}>
                 <Box
-                    background="light-1"
+                    background="white"
                     round="small"
                     pad="medium"
                 >
-                    <ExperiencePro/>
+                    <ExperiencePro />
                 </Box>
             </Collapsible>
             <Collapsible open={skillsIsOpen}>
                 <Box
-                    background="light-1"
+                    background="white"
                     round="small"
                     pad="medium"
                 >
-                    <Skills/>
+                    <Skills />
                 </Box>
             </Collapsible>
         </Box>
