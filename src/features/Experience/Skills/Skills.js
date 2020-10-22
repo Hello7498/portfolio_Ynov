@@ -62,9 +62,9 @@ export const Skills = () => {
                     {"Softs skills"}
                 </Text>
                 <OneSkill nameGird={"skill9"} percent={95} nameSkill={"autonomy"} ></OneSkill>
-                <OneSkill nameGird={"skill10"} percent={90} nameSkill={"team work"} ></OneSkill>
-                <OneSkill nameGird={"skill11"} percent={80} nameSkill={"Git"} ></OneSkill>
-                <OneSkill nameGird={"skill12"} percent={75} nameSkill={"Agile"} ></OneSkill>
+                <OneSkill nameGird={"skill10"} percent={95} nameSkill={"Adaptability"} ></OneSkill>
+                <OneSkill nameGird={"skill11"} percent={90} nameSkill={"team work"} ></OneSkill>
+                <OneSkill nameGird={"skill12"} percent={75} nameSkill={"Conflict resolution"} ></OneSkill>
             </Grid>
     )
 
