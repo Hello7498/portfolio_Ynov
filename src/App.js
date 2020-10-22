@@ -16,7 +16,10 @@ const theme = {
       myLarge: '150px',
     },
     extend: `border: 2px solid black;`
-  }
+  },
+  accordion: {
+    border: undefined,
+  },
 };
 
 function App() {

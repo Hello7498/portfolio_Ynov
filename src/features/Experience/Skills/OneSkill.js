@@ -11,7 +11,6 @@ export const OneSkill = ({nameGird, percent, nameSkill}) => {
             gap="medium"
             margin="large"
         >
-            {console.log(nameSkill)}
             <Meter
                 values={[{
                     value: percent,
